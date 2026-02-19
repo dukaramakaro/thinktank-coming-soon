@@ -28,7 +28,12 @@ export default function Navbar() {
   }, [location.pathname])
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
+    <motion.nav
+      className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
+    >
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo">
           <img src={logo} alt="ThinkTank Creations" />
@@ -104,6 +109,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   )
 }

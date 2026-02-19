@@ -14,9 +14,12 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(188, 19, 254, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(188, 19, 254, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(188, 19, 254, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(188, 19, 254, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%);
+  animation: gridFade 12s ease-in-out infinite;
 }
 
 .home__orb {
@@ -48,9 +51,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: rgba(188, 19, 254, 0.1);
-  animation: scanline 8s linear infinite;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(188, 19, 254, 0.15), transparent);
+  box-shadow: 0 0 15px rgba(188, 19, 254, 0.08), 0 0 30px rgba(188, 19, 254, 0.04);
+  animation: scanline 10s ease-in-out infinite;
 }
 
 /* Hero */
@@ -70,12 +74,12 @@
 }
 
 .home__logo {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
   margin: 0 auto;
-  filter: drop-shadow(0 0 20px rgba(188, 19, 254, 0.3));
-  animation: pulseGlow 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(188, 19, 254, 0.4)) drop-shadow(0 0 60px rgba(188, 19, 254, 0.15));
+  animation: logoPulse 4s ease-in-out infinite;
 }
 
 .home__brand {
@@ -222,7 +226,7 @@
   }
 
   .home__logo {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
   }
 }

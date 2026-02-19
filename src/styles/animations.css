@@ -12,16 +12,31 @@
   75% { transform: translate(10px, -10px) scale(1.05); }
 }
 
-/* Pulse glow */
+/* Pulse glow - subtle for backgrounds */
 @keyframes pulseGlow {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
 }
 
-/* Scanline */
+/* Logo pulse - keeps logo visible with subtle glow breathing */
+@keyframes logoPulse {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 30px rgba(188, 19, 254, 0.3)) drop-shadow(0 0 60px rgba(188, 19, 254, 0.1)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 40px rgba(188, 19, 254, 0.5)) drop-shadow(0 0 80px rgba(188, 19, 254, 0.2)); }
+}
+
+/* Scanline - gentle fade pulse instead of horizontal sweep */
 @keyframes scanline {
-  0% { transform: translateY(-100vh); }
-  100% { transform: translateY(100vh); }
+  0% { opacity: 0; transform: translateY(0); }
+  30% { opacity: 0.15; }
+  50% { opacity: 0.08; }
+  70% { opacity: 0.12; }
+  100% { opacity: 0; transform: translateY(100vh); }
+}
+
+/* Grid fade - grid fades in and out subtly */
+@keyframes gridFade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 /* Neon flicker */

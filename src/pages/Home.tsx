@@ -58,36 +58,36 @@ export default function Home() {
         <div className="container">
           <motion.div
             className="home__logo-wrap"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.85, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <img src={logo} alt="ThinkTank Creations" className="home__logo" />
           </motion.div>
 
           <motion.h1
             className="home__brand"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             ThinkTank Creations
           </motion.h1>
 
           <motion.p
             className="home__tagline"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
+            initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             THINK <span className="neon-text">WISE</span>, CREATE <span className="neon-text">SMART</span>
           </motion.p>
 
           <motion.p
             className="home__intro"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
+            initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.7, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             Freelance studio based in Playa del Carmen. We build digital solutions
             that solve real business problems — from web apps to data systems.
