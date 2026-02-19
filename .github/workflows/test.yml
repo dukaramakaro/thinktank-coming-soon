@@ -1,0 +1,54 @@
+name: CI - Validar HTML
+
+# Se ejecuta en cada Pull Request hacia main
+on:
+  pull_request:
+    branches: [main]
+  # Tambien se ejecuta en push a cualquier rama (para que veas el resultado)
+  push:
+    branches-ignore: [main]
+
+jobs:
+  lint:
+    name: Validar HTML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar HTMLHint
+        run: npm run lint
+
+      - name: Verificar que index.html existe
+        run: |
+          if [ ! -f index.html ]; then
+            echo "ERROR: index.html no existe!"
+            exit 1
+          fi
+
+      - name: Verificar que el titulo existe
+        run: |
+          if ! grep -q "<title>" index.html; then
+            echo "ERROR: Falta el tag <title> en index.html"
+            exit 1
+          fi
+
+      - name: Verificar meta viewport (responsive)
+        run: |
+          if ! grep -q "viewport" index.html; then
+            echo "ADVERTENCIA: Falta meta viewport para responsive design"
+            exit 1
+          fi
+
+      - name: Resumen
+        if: success()
+        run: echo "Todas las validaciones pasaron. Listo para merge."

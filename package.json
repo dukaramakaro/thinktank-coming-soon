@@ -1,0 +1,15 @@
+{
+  "name": "thinktank-coming-soon",
+  "version": "1.0.0",
+  "description": "ThinkTank Creations - Coming Soon page",
+  "private": true,
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "htmlhint index.html",
+    "serve": "http-server . -p 3000 -o"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "http-server": "^14.1.1"
+  }
+}
