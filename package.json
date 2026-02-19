@@ -1,15 +1,32 @@
 {
-  "name": "thinktank-coming-soon",
-  "version": "1.0.0",
-  "description": "ThinkTank Creations - Coming Soon page",
+  "name": "thinktank-creations",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ThinkTank Creations - Think Wise, Create Smart",
   "scripts": {
-    "test": "npm run lint",
-    "lint": "htmlhint index.html",
-    "serve": "http-server . -p 3000 -o"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "framer-motion": "^11.18.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.6.0"
   },
   "devDependencies": {
-    "htmlhint": "^1.1.4",
-    "http-server": "^14.1.1"
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vite": "^7.3.1"
   }
 }

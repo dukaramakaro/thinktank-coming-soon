@@ -1,0 +1,47 @@
+:root {
+  /* Colors */
+  --bg-primary: #030306;
+  --bg-secondary: #0a0a12;
+  --bg-card: #0d0d1a;
+  --neon-purple: #BC13FE;
+  --neon-purple-light: #D946EF;
+  --neon-purple-dim: rgba(188, 19, 254, 0.3);
+  --neon-purple-glow: rgba(188, 19, 254, 0.15);
+  --text-primary: #E0E0E0;
+  --text-secondary: #A0A0A0;
+  --text-white: #ffffff;
+  --text-muted: #666680;
+
+  /* Typography */
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --navbar-height: 70px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --glow-sm: 0 0 10px rgba(188, 19, 254, 0.3);
+  --glow-md: 0 0 20px rgba(188, 19, 254, 0.3), 0 0 40px rgba(188, 19, 254, 0.1);
+  --glow-lg: 0 0 30px rgba(188, 19, 254, 0.4), 0 0 60px rgba(188, 19, 254, 0.2);
+}

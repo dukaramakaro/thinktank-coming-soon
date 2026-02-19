@@ -1,0 +1,228 @@
+.home {
+  position: relative;
+}
+
+/* Background */
+.home__bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(188, 19, 254, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(188, 19, 254, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.home__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.home__orb--1 {
+  top: 5%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(188, 19, 254, 0.06);
+}
+
+.home__orb--2 {
+  bottom: 10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(188, 19, 254, 0.04);
+  animation-delay: -8s;
+}
+
+.home__scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(188, 19, 254, 0.1);
+  animation: scanline 8s linear infinite;
+}
+
+/* Hero */
+.home__hero {
+  position: relative;
+  z-index: 1;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: var(--navbar-height);
+}
+
+.home__logo-wrap {
+  margin-bottom: var(--space-xl);
+}
+
+.home__logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 20px rgba(188, 19, 254, 0.3));
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.home__brand {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.home__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.home__intro {
+  max-width: 550px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Services */
+.home__services {
+  position: relative;
+  z-index: 1;
+}
+
+.home__services-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.home__services-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.home__services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.home__service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.home__service-card:hover {
+  border-color: var(--neon-purple-dim);
+  box-shadow: var(--glow-sm);
+  transform: translateY(-4px);
+}
+
+.home__service-icon {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--neon-purple);
+  margin-bottom: var(--space-md);
+}
+
+.home__service-title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-white);
+}
+
+.home__service-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.home__service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-purple);
+  margin-top: var(--space-lg);
+  transition: gap var(--transition-fast);
+}
+
+.home__service-card:hover .home__service-link {
+  gap: var(--space-sm);
+}
+
+/* Contact */
+.home__contact {
+  position: relative;
+  z-index: 1;
+}
+
+.home__contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-purple-dim);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl) var(--space-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home__contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+}
+
+.home__contact-card h2 {
+  margin-bottom: var(--space-md);
+}
+
+.home__contact-card p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .home__services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home__logo {
+    width: 90px;
+    height: 90px;
+  }
+}

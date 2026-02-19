@@ -1,16 +1,14 @@
-name: CI - Validar HTML
+name: CI - Build & Lint
 
-# Se ejecuta en cada Pull Request hacia main
 on:
   pull_request:
     branches: [main]
-  # Tambien se ejecuta en push a cualquier rama (para que veas el resultado)
   push:
     branches-ignore: [main]
 
 jobs:
-  lint:
-    name: Validar HTML
+  build:
+    name: Build & Validate
     runs-on: ubuntu-latest
 
     steps:
@@ -21,34 +19,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm ci
 
-      - name: Ejecutar HTMLHint
-        run: npm run lint
+      - name: TypeScript check
+        run: npx tsc -b
 
-      - name: Verificar que index.html existe
+      - name: Build production
+        run: npx vite build
+
+      - name: Verificar que dist/index.html existe
         run: |
-          if [ ! -f index.html ]; then
-            echo "ERROR: index.html no existe!"
-            exit 1
-          fi
-
-      - name: Verificar que el titulo existe
-        run: |
-          if ! grep -q "<title>" index.html; then
-            echo "ERROR: Falta el tag <title> en index.html"
-            exit 1
-          fi
-
-      - name: Verificar meta viewport (responsive)
-        run: |
-          if ! grep -q "viewport" index.html; then
-            echo "ADVERTENCIA: Falta meta viewport para responsive design"
+          if [ ! -f dist/index.html ]; then
+            echo "ERROR: Build no genero dist/index.html"
             exit 1
           fi
 
       - name: Resumen
         if: success()
-        run: echo "Todas las validaciones pasaron. Listo para merge."
+        run: echo "Build exitoso. Listo para merge."

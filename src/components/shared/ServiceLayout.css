@@ -1,0 +1,172 @@
+.service-page {
+  min-height: 100vh;
+}
+
+/* Reusable section styles for service pages */
+.service-section {
+  padding: var(--space-4xl) 0;
+}
+
+.service-section__header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.service-section__label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neon-purple);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.service-section__title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.service-section__subtitle {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: var(--space-md) auto 0;
+}
+
+/* Pain points grid */
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+.pain-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-normal);
+}
+
+.pain-card:hover {
+  border-color: var(--neon-purple-dim);
+}
+
+.pain-card__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.pain-card__title {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.pain-card__description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Solution section */
+.solution-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.solution-block__text h2 {
+  margin-bottom: var(--space-md);
+}
+
+.solution-block__text p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+.solution-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.solution-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.solution-features li::before {
+  content: '>';
+  font-family: var(--font-display);
+  color: var(--neon-purple);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Solution visual */
+.solution-visual {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-purple-dim);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-visual::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+}
+
+/* Case studies section */
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Tech badges */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.tech-badge {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-purple);
+  border: 1px solid var(--neon-purple-dim);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .solution-block {
+    grid-template-columns: 1fr;
+  }
+
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pain-grid {
+    grid-template-columns: 1fr;
+  }
+}

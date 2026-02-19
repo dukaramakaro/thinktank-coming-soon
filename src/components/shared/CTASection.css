@@ -1,0 +1,64 @@
+.cta__card {
+  background: var(--bg-card);
+  border: 1px solid var(--neon-purple-dim);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl) var(--space-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+}
+
+.cta__title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: var(--space-md);
+}
+
+.cta__description {
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+  font-size: 1.05rem;
+}
+
+.cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: var(--neon-purple);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.cta__button:hover {
+  background: var(--neon-purple-light);
+  color: var(--bg-primary);
+  box-shadow: var(--glow-md);
+  transform: translateY(-2px);
+}
+
+.cta__button svg {
+  transition: transform var(--transition-fast);
+}
+
+.cta__button:hover svg {
+  transform: translateX(4px);
+}
